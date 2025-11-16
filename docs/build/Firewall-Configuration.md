@@ -1,0 +1,1 @@
+https://docs.netgate.com/pfsense/en/latest/development/php-shell.html#enableallowallwan
