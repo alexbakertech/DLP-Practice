@@ -22,5 +22,17 @@ Proxmox by default is managed over its own web interface and has a default bridg
 
 To manage Proxmox's network interfaces, sign in to the web UI and navigate to `Datacenter > 'servername' > System > Netowrk` and you will see a list of interfaces for your Proxmox server.![](Pasted%20image%2020251116104355.png)
 
+#### Identify WAN bridge
+
 Next, we want to identify our bridge interface. This will be what we assign to our pfSense VM to act as the WAN side of the router. For my setup it is `vmbr0`, and since my home network has configured VLANS, I also need to ensure that the bridge is VLAN aware, so I can put the VM on my lab network so it doesn't interfere with regular operations.
 ![](Pasted%20image%2020251116104720.png)
+
+Take note of the interface name and be prepared to use it later when we configure the actual pfSense VM. This interface will provide our lab network with internet access so we can download our tools later.
+#### Create the test network interface
+
+Now that we have identified the WAN connection, its time to create our internal bridge network, which will be our lab's LAN. To do this, select `Create > Linux Bridge`![](Pasted%20image%2020251116105958.png)
+
+When you do this, you'll see a popup prompting you to enter information about the interface to be created. Sine we are planning for pfSense to manage this interface, we can leave everything blank except for the name. Standard naming convention is to use `vmbr#` where # is the interface number. In our case, this is the second bridge interface on our system, so the name will be `vmbr1`. We also want to ensure that the `Autostart` and `VLAN aware` options are both checked. Then click `Create` and note down the interface name you assigned to this bridge.![](Pasted%20image%2020251116111435.png)
+
+Finally, click `Apply Configuration` in Proxmox's network manager to reload the networking daemon and apply the changes. Once that is done, its time to create the actual VM for pfSense.![](Pasted%20image%2020251116111901.png)
+### Installing pfSense
