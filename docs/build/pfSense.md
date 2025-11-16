@@ -196,20 +196,12 @@ Once all of the changes are applied, you should see something like this, showing
 
 ![](assets/Pasted%20image%2020251116154850.png)
 
-##### Default Credentials
-
-pfSense has default credentials for the web interface. It is best practice to login, create a new administrator user, change the default password, and disable the original account. But since this is a lab, we can settle for just using the default password for now.
-
-The default credentials are as follows:
-- Username: admin
-- Password: pfsense
-
 ### Final Note
 
-Since we do not have a VM or device on the LAN side of the router, we are unable to create firewall rules until later in the lab when we set up a new VM.
+You should now have a functioning pfSense install. I strongly recommend creating a full backup of the VM in its current state before continuing.
 
-To put a VM behind this pfSense machine, assign an interface using the same bridge you configured as pfSense's LAN Adapter, being sure to leave the VLAN blank.
+To do this, select the `Backup` tab in the VM management window, and click `Backup Now`. Then in the `Notes` section of the popup, enter `{{guestname}}, {{vmid}}` and click `Backup`.
 
-pfSense's default web interface is on https://192.1638.1.1
+![](Pasted%20image%2020251116163913.png)
 
-See [Firewall-Configuration](Firewall-Configuration.md) for further configuration,
+Once you have backed up the VM, proceed to the [Firewall-Configuration](Firewall-Configuration.md) page to setup the firewall rules.
