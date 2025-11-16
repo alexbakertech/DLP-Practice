@@ -76,7 +76,7 @@ Under the CPU tab, assign two cores and leave the rest of the configuration at t
 
 ![](assets/Pasted%20image%2020251116114321.png)
 
-In the Memory tab, the default value of 2Gb of RAM is plenty for our use case, so you can continue without changing anything.
+In the Memory tab, the default value of 2Gb of RAM is a little under what we need for our use case, so bump it to 4Gb (4096MiB).
 
 Next is the Network tab. When creating a new VM, Proxmox only expects us to need one network adapter per device. Since we want to set up two network interfaces, we will check the `No network device` box for now and configure our networking separately.
 
