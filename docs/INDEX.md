@@ -4,5 +4,5 @@ I'm leaving this for last so I can make sure everything is in place before final
 
 ## Build Guides
 
-- [pfSense VM](docs/build/pfSense.md)
+- [pfSense Setup](docs/build/pfSense.md)
 - 
