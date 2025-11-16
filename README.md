@@ -38,10 +38,10 @@ The lab is deployed as a multi-zone virtual network enforced by pfSense and cons
 
 ### Network Zones (Proxmox VLANs)
 
-- **VLAN 10** – Client Network (`win11-client`, `wazuh-siem`)
-- **VLAN 20** – Security Gateway (`dlp-gateway`)
-- **VLAN 30** – DMZ (`external-server`)
-- **VLAN 99** – Management (optional / future extension)
+- **VLAN 810** – Client Network (`win11-client`, `wazuh-siem`)
+- **VLAN 820** – Security Gateway (`dlp-gateway`)
+- **VLAN 830** – DMZ (`external-server`)
+- **VLAN 899** – Management (optional / future extension)
 
 All traffic from the client network destined for external zones must traverse:
 
