@@ -8,5 +8,5 @@ The pfSense virtual machine will be the heart of our experimental network. It wi
 
 	- To decompress the file on linux, simply run 'gunzip -c pfsense.iso.gz > pfsesne.iso' ![docs/build/assets/](gunzip-demo.png)
 	
-	- To decompress the file on Windows, you can use 7zip. Simply right click on the file, select 7-Zip, and click Extract Here.  ![docs/build/assets/](7-zip-demo.png)
+	- To decompress the file on Windows, you can use 7zip. Simply right click on the file, select 7-Zip, and click Extract Here.  ![docs/build/assets/](assets/7-zip-demo.png)
 - Finally, upload the ISO file to Proxmox (or your virtualization platform of choice)![docs/build/assets/](pfSense-iso-uploaded.png)
