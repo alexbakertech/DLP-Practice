@@ -11,8 +11,9 @@
 		1) I am using Ubuntu 24.04.3 LTS
 	3) pfSense ISO image can be found [here](https://atxfiles.netgate.com/mirror/downloads/)
 		1) I am using a download mirror because Netgate now requests PII to get the image from the official pfsense website.
+		2) The ISO from Netgate is compressed as a .iso.gz file. This can be unzipped using gunzip on linux or with 7zip on Windows.
 4) Wazuh install script: 
 	1) `https://packages.wazuh.com/4.8/wazuh-install.sh`
 5) Emerging Threats DLP rulepack:
 	1) `https://rules.emergingthreats.net/open/suricata-6.0.0/rules/emerging-dlp.rules`
-6) 
+6) A copy of 7zip installed to extract the pfsense iso.gz image
