@@ -84,6 +84,6 @@ Next is the Network tab. When creating a new VM, Proxmox only expects us to need
 
 Finally, continue to the Confirm tab, review the VM settings, and when ready, click `Finish` to complete the configuration. Proxmox will then allocate the resources for your VM and youll be one step closer to a functioning machine.
 
+![](assets/Pasted%20image%2020251116121011.png)
 #### Network Configuration
 
-![](assets/Pasted%20image%2020251116121011.png)
