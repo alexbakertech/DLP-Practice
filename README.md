@@ -2,6 +2,10 @@
 
 This repository contains all the artifacts for a complete, reproducible Data Loss Prevention (DLP) homelab environment deployed inside Proxmox. The lab demonstrates DLP in Motion, DLP at Rest, and DLP in Use across a fully isolated virtual environment.
 
+## 1. Index
+
+- Check out this project's [Documentation Homepage](docs/INDEX.md)
+
 ## 2. Project Objectives
 
 - Build an enterprise-modeled DLP testbed.
