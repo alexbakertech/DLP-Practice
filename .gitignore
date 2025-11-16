@@ -1,3 +1,4 @@
 #Ignore graph settings and workspace settings
 */graph.json
 */workspace.json
+exclude/*

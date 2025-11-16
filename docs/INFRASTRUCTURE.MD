@@ -1,6 +1,7 @@
 ## Initial resources
 
 1) Existing network with VLAN 40 designated for LAB use
+	1) I will use VLAN 40 as the WAN for my pfSense VM
 2) Proxmox Hypervisor
 	1) This instance of Proxmox is dedicated to this lab
 3) Windows, Ubuntu LTS, and pfSense ISO images
