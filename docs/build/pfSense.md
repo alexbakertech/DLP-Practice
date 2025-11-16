@@ -89,29 +89,29 @@ Finally, continue to the Confirm tab, review the VM settings, and when ready, cl
 
 As mentioned before, we skipped adding networking interfaces to this VM. Now its time to add those in. To do so, select the newly created VM from the management panel in Proxmox under `Datacenter > 'servername' > DLP-pfSense > Hardware`.
 
-![](Pasted%20image%2020251116143104.png)
+![](assets/Pasted%20image%2020251116143104.png)
 
 ##### Add WAN Adapter
 
 Once in the hardware configuration panel, we can add our two interfaces. Click `Add > Network Device` and select the bridge we noted as the WAN bridge earlier. 
 
-![](Pasted%20image%2020251116143216.png)
+![](assets/Pasted%20image%2020251116143216.png)
 
 If your home network does not use VLANs, leave the VLAN Tag blank. In my case, I use VLAN 40 for testing , so I will adjust my setup accordingly. Finally, be sure to uncheck the `Firewall` options since pfSense will be taking over that function.
 
-![](Pasted%20image%2020251116143319.png)
+![](assets/Pasted%20image%2020251116143319.png)
 
 ##### Add LAN Adapter
 
 Adding the LAN bridge is the same process as adding the WAN bridge. Just be sure to change the Bridge interface to match the one we created earlier and leave the VLAN Tag section blank.
 
-![](Pasted%20image%2020251116143827.png)
+![](assets/Pasted%20image%2020251116143827.png)
 
 ##### Make Note of Adapter MAC Addresses
 
 When configuring pfSense, you will be asked to assign interfaces for your WAN and LAN networks. To make this easier, note the MAC Addresses of the interfaces you created. They can be seen in the hardware tab we were just in. Just note which MAC Address goes to the WAN interface and which one goes to the LAN interface.
 
-![](Pasted%20image%2020251116151839.png)
+![](assets/Pasted%20image%2020251116151839.png)
 
 ##### Enabling and Disabling Network Adapters
 
@@ -119,7 +119,7 @@ At some point, you may find it useful to  disconnect and reconnect the virtual n
 
 We can simulate this by double clicking on the interface we want to unplug and checking the `Advanced` checkbox, which will reveal a `Disconnect` option we can select. When this option is enabled, the VM will present a network device that is not connected to a network. 
 
-![](Pasted%20image%2020251116145636.png)
+![](assets/Pasted%20image%2020251116145636.png)
 
 
 #### Install and Configure pfSense
@@ -127,41 +127,41 @@ We can simulate this by double clicking on the interface we want to unplug and c
 
 With the initial configuration complete, lets boot up the VM. Select the VM from the server view and click the start button on the top right of the screen. 
 
-![](Pasted%20image%2020251116145935.png)
+![](assets/Pasted%20image%2020251116145935.png)
 
 Once the VM is started, switch to the Console view in the Proxmox web UI. There you will see the pfSense Installer waiting for your input.
 
-![](Pasted%20image%2020251116150204.png)
+![](assets/Pasted%20image%2020251116150204.png)
 
 While in the Console view, hit enter to Accept the Notices, and select the Install option on the next screen.
 
-![](Pasted%20image%2020251116150321.png)
+![](assets/Pasted%20image%2020251116150321.png)
 
 For disk partitioning, select `Auto (ZFS)` and select `Install` on the Options page. There is no need to change anything here.
 
-![](Pasted%20image%2020251116150425.png)
+![](assets/Pasted%20image%2020251116150425.png)
 
 Select `stripe` for ZFS Virtual Device type. We do not need any sort of RAID since this is a temporary installation.
 
-![](Pasted%20image%2020251116150543.png)
+![](assets/Pasted%20image%2020251116150543.png)
 
 Next you will need to press the spacebar to select the disk we will be installing pfSense onto. Since this is in a VM and we only configured one disk, there will be only one option. However, it is not selected by default, so select it so that you see the `*` between the two brackets, and then press enter to continue with the installation.
 
-![](Pasted%20image%2020251116150721.png)
+![](assets/Pasted%20image%2020251116150721.png)
 
 Finally, we are asked to confirm our changes and format the disk. Select yes and press enter.
 
-![](Pasted%20image%2020251116150752.png)
+![](assets/Pasted%20image%2020251116150752.png)
 
 Once pfSense has been installed to the disk, you will be asked to reboot. Press enter to continue.
 
-![](Pasted%20image%2020251116150942.png)
+![](assets/Pasted%20image%2020251116150942.png)
 
 ##### Initial pfSense Configuration
 
 Once pfSense has rebooted, you will be asked if VLANs should be configured. 
 
-![](Pasted%20image%2020251116152051.png)
+![](assets/Pasted%20image%2020251116152051.png)
 
 We want to say yes, as we are configuring the following VLANS:
 - **VLAN 810** – Client Network (`win11-client`, `wazuh-siem`)
@@ -178,7 +178,7 @@ For me that is `vtnet1`. Enter your parent interface name and press enter.
 
 Then enter the VLAN tag for the new sub interface and press enter again.
 
-![](Pasted%20image%2020251116152723.png)
+![](assets/Pasted%20image%2020251116152723.png)
 
 pfSense will ask you these same two questions on repeat until you press enter without putting anything in as a response. This allows you to enter as many VLANs as needed. Repeat the prior two steps until you add each VLANs to the LAN Network Adapter. Then press enter to exit the prompt after you are finished.
 
@@ -190,11 +190,11 @@ You will be asked to enter your LAN interface name. This should be the same inte
 
 Finally, youll be asked to configure any additional interfaces you may wish to add. We do not need any interfaces other than the ones we have already configured at this point, so leave this part blank and press enter to continue. And type `y` followed by enter to apply the setup.
 
-![](Pasted%20image%2020251116154046.png)
+![](assets/Pasted%20image%2020251116154046.png)
 
 Once all of the changes are applied, you should see something like this, showing that both of your  interfaces have IP addresses assigned:
 
-![](Pasted%20image%2020251116154850.png)
+![](assets/Pasted%20image%2020251116154850.png)
 
 ##### Default Credentials
 
