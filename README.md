@@ -65,7 +65,7 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
 ## 5. Build Plan
 
 1. **Deploy pfSense**  
-   - Create VLANs (10, 20, 30).  
+   - Create VLANs (810, 820, 830).  
    - Configure interfaces, firewall rules, and NAT.  
    - Ensure client → gateway → DMZ path enforcement.
 
