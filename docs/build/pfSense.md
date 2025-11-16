@@ -6,7 +6,7 @@ The pfSense virtual machine will be the heart of our experimental network. It wi
 
 - Netgate provides the pfSense images in a image.iso.gz format that will need to be decompressed prior to loading it into your hypervisor.
 
-	- To decompress the file on linux, simply run 'gunzip -c pfsense.iso.gz > pfsesne.iso' ![[7-zip-demo.png]]
+	- To decompress the file on linux, simply run 'gunzip -c pfsense.iso.gz > pfsesne.iso' ![](gunzip-demo.png)
 	
-	- To decompress the file on Windows, you can use 7zip. Simply right click on the file, select 7-Zip, and click Extract Here. ![[gunzip-demp.png]] 
-- Finally, upload the ISO file to Proxmox (or your virtualization platform of choice)![[pfSense-iso-uploaded.png]]
+	- To decompress the file on Windows, you can use 7zip. Simply right click on the file, select 7-Zip, and click Extract Here.  ![](7-zip-demo.png)
+- Finally, upload the ISO file to Proxmox (or your virtualization platform of choice)![](pfSense-iso-uploaded.png)
