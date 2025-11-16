@@ -5,6 +5,8 @@ I'm leaving this for last so I can make sure everything is in place before final
 ## Build Guides
 
 - [pfSense Setup](build/pfSense.md)
+- [Firewall-Configuration](builld/Firewall-Configuration.md) (In Progress)
+- 
 
 ## Network Information
 
