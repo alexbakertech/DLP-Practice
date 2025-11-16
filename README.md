@@ -1,67 +1,134 @@
 # Proxmox DLP Homelab Project
 
-This repository contains all the artifacts for a complete, reproducible Data Loss Prevention (DLP) homelab environment deployed inside Proxmox. The lab demonstrates DLP in Motion, DLP at Rest, and DLP in Use across a fully isolated virtual environment.
+This repository contains all the artifacts for a complete, reproducible Data Loss Prevention (DLP) homelab environment deployed inside Proxmox. The lab models a segmented enterprise network using pfSense, VLANs, Suricata, Wazuh, and a Windows client. It demonstrates DLP in Motion, DLP at Rest, and DLP in Use across a fully isolated virtual environment.
 
 ## 1. Index
 
-- Check out this project's [Documentation Homepage](docs/INDEX.md)
+- Visit the project's [Documentation Homepage](docs/index.md)
 
 ## 2. Project Objectives
 
-- Build an enterprise-modeled DLP testbed.
+- Build an enterprise-modeled, VLAN-segmented DLP testbed.
 - Detect sensitive data exfiltration across network channels.
-- Monitor unauthorized file modifications and USB activity.
-- Produce correlated alerts through Suricata and Wazuh.
-- Generate documentation, logs, and a final polished report.
-- Publish reproducible artifacts in a GitHub repository.
+- Monitor unauthorized file modifications, USB activity, and endpoint behavior.
+- Produce correlated alerts using Suricata (network) and Wazuh (endpoint/SIEM).
+- Generate documentation, logs, and a polished final report.
+- Publish reproducible artifacts in a structured GitHub repository.
 
 ## 3. System Architecture
 
-The lab environment consists of:
+The lab is deployed as a multi-zone virtual network enforced by pfSense and consists of:
 
-- **dlp-gateway**: Suricata IPS for outbound inspection and DLP detection.
-- **win11-client**: Endpoint workstation with seeded sensitive data.
-- **wazuh-siem**: Wazuh all-in-one server for monitoring and alerting.
-- **external-server**: Simulated public endpoint for exfiltration attempts.
+### Core Components
+
+- **pfSense Router/Firewall**  
+  Provides network segmentation, VLAN routing, and controlled east–west and egress paths.
+
+- **dlp-gateway** (Ubuntu + Suricata)  
+  Inline inspection gateway for DLP in Motion. Handles outbound inspection, pattern matching, and alert generation.
+
+- **win11-client**  
+  Corporate workstation used for endpoint-based DLP scenarios. Contains seeded synthetic PII/PCI content.
+
+- **wazuh-siem**  
+  Wazuh all-in-one deployment providing File Integrity Monitoring, USB monitoring, log aggregation, and alert correlation.
+
+- **external-server**  
+  Simulated “public” target reachable only through the pfSense-controlled DMZ VLAN. Used to test exfiltration scenarios.
+
+### Network Zones (Proxmox VLANs)
+
+- **VLAN 10** – Client Network (`win11-client`, `wazuh-siem`)
+- **VLAN 20** – Security Gateway (`dlp-gateway`)
+- **VLAN 30** – DMZ (`external-server`)
+- **VLAN 99** – Management (optional / future extension)
+
+All traffic from the client network destined for external zones must traverse:
+
+```
+win11-client → pfSense → dlp-gateway → pfSense → DMZ/external-server
+```
+
+
+This design mirrors corporate segmentation and supports realistic DLP inspection points.
 
 ## 4. Tooling Summary
 
-- **Suricata**: Network-level DLP detection.
-- **Wazuh**: Endpoint monitoring, FIM, USB detection.
-- **Windows 11**: User workstation.
-- **Proxmox**: Virtualization platform.
-- **Ubuntu Server**: Gateway and external server roles.
-- **(Optional) Microsoft Purview**: Enterprise-grade endpoint DLP features.
+- **pfSense**: VLAN segmentation, NAT, firewall policy, and traffic control.
+- **Suricata**: Network-level DLP detection using DLP and exfiltration rule sets.
+- **Wazuh**: Endpoint monitoring, File Integrity Monitoring (FIM), USB activity detection, and optional active response.
+- **Windows 11**: Endpoint workstation for testing user-driven exfiltration attempts.
+- **Proxmox VE**: Virtualization and distributed networking fabric for the entire project.
+- **Ubuntu Server**: Base OS for Suricata gateway and external server.
+- **(Optional) Microsoft Purview**: Cloud-backed endpoint DLP enforcement and monitoring.
 
 ## 5. Build Plan
 
-1.  **Deploy Wazuh SIEM**: Install Wazuh AIO on Ubuntu and configure FIM, USB monitoring, and optional active response.
-2.  **Deploy Suricata Gateway**: Install Suricata, load DLP rule sets, and enable NAT routing.
-3.  **Configure Windows Endpoint**: Seed files containing synthetic PII/PCI, install Wazuh agent, and configure monitoring.
-4.  **External Server Setup**: Deploy Nginx, SSH, or FTP to act as an exfiltration target.
+1. **Deploy pfSense**  
+   - Create VLANs (10, 20, 30).  
+   - Configure interfaces, firewall rules, and NAT.  
+   - Ensure client → gateway → DMZ path enforcement.
+
+2. **Deploy Wazuh SIEM**  
+   - Install Wazuh all-in-one on Ubuntu.  
+   - Register the Windows endpoint.  
+   - Configure FIM, USB monitoring, and optional active-response policies.
+
+3. **Deploy Suricata Gateway**  
+   - Install Suricata in inline IPS mode.  
+   - Load EmergingThreats DLP rule sets.  
+   - Enable EVE JSON logging and forward logs to Wazuh (optional).
+
+4. **Configure the Windows Endpoint**  
+   - Seed with synthetic PII/PCI test files.  
+   - Install and enroll the Wazuh agent.  
+   - Validate FIM and USB detection.
+
+5. **Deploy External Server**  
+   - Install Nginx, FTP, SSH, or similar services.  
+   - Use as the “public” exfiltration target reachable only through pfSense routing.
 
 ## 6. Test Scenarios
 
--   **Network Exfiltration**: Attempt HTTP uploads of sensitive files; Suricata detects the data patterns.
--   **File Integrity Violations**: Modify sensitive files; Wazuh FIM sends alerts.
--   **USB Exfiltration**: Copy files to USB; Wazuh detects insertion and monitors file writes.
--   **Optional: Microsoft Purview**: Block USB transfers and cloud uploads of sensitive data.
+- **Network Exfiltration**  
+  Attempt HTTP, FTP, SCP, or other file transfers from the Windows host.  
+  Suricata inspects flows and issues DLP alerts.
+
+- **File Integrity Violations**  
+  Modify, delete, or rename sensitive files.  
+  Wazuh FIM generates real-time alerts.
+
+- **USB Exfiltration Attempts**  
+  Copy sensitive data to a virtual USB storage device.  
+  Wazuh detects insertion and logs file activity.
+
+- **Optional: Microsoft Purview**  
+  Use Purview DLP policies to block USB writes and cloud uploads.
 
 ## 7. Deliverables
 
-- Architecture diagram (PNG/SVG).
-- Final report (3-5 pages).
-- Evidence bundle including Suricata/Wazuh logs.
-- GitHub repository with documentation, configs, and scripts.
+- **Architecture diagram** (PNG/SVG) showing pfSense + VLANs + traffic flow.
+- **Operational runbook** (3–5 pages).
+- **Evidence bundle** containing Suricata, Wazuh, and endpoint logs.
+- **GitHub repository** containing reproducible configs, scripts, and documentation.
+- **Final project report** summarizing design, controls, and findings.
 
 ## 8. GitHub Repository Structure
 
 ```
-dlp-homelab/
-├── README.md
-├── docs/
-├── configs/
-├── scripts/
-├── evidence/
+dlp-homelab/  
+├── README.md  
+├── docs/  
+│ ├── index.md  
+│ ├── architecture/  
+│ ├── build/  
+│ ├── testing/  
+│ └── reporting/  
+├── configs/  
+│ ├── pfsense/  
+│ ├── suricata/  
+│ └── wazuh/  
+├── scripts/  
+├── evidence/  
 └── reports/
 ```
