@@ -40,10 +40,20 @@ From here, you can log in with the default credentials below:
 
 ![](assets/Pasted%20image%2020251116184633.png)
 
-Once signed in, youll be prompted to go through the setup wizard. This is optional and out of scope for this project. To bypass it, click on the pfSense logo in the top right corner of the page and you will be brough to the home screen.
-
-![](assets/Pasted%20image%2020251116184841.png)
-
-
 ## Assign VLANS to Network Interfaces
 
+Once signed in, youll be prompted to go through the setup wizard. This is optional and out of scope for this project. We will skip directly to configuring our network interfaces by navigating to `Interfaces > Assignemnts`
+
+![](Pasted%20image%2020251117163108.png)
+
+The Interface Assignments screen will allow us to assign the VLANs we created earlier to interfaces that we can manage with pfSense.
+
+Clicking the dropdown menu next to `Available network ports` wills show available networks you can add. Select `VLAN 810` that we created earlier and click `Add`. 
+
+![](Pasted%20image%2020251117163447.png)
+
+Repeat the above step to until all of the VLANs we created earlier are assigned to their own interface, then click `Save`
+
+![](Pasted%20image%2020251117163645.png)
+
+## Configure Network Interfaces
