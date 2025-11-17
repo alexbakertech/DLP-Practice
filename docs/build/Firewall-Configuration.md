@@ -1,5 +1,3 @@
-https://docs.netgate.com/pfsense/en/latest/development/php-shell.html#enableallowallwan
-
 ## Overview
 
 Before starting on the steps below, please ensure you have made a backup of your pfSense VM. That way if something gets messed up, we can restore to a known working state.
