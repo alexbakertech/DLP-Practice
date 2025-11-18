@@ -44,17 +44,17 @@ From here, you can log in with the default credentials below:
 
 Once signed in, youll be prompted to go through the setup wizard. This is optional and out of scope for this project. We will skip directly to configuring our network interfaces by navigating to `Interfaces > Assignemnts`
 
-![](Pasted%20image%2020251117163108.png)
+![](assets/Pasted%20image%2020251117163108.png)
 
 The Interface Assignments screen will allow us to assign the VLANs we created earlier to interfaces that we can manage with pfSense.
 
 Clicking the dropdown menu next to `Available network ports` wills show available networks you can add. Select `VLAN 810` that we created earlier and click `Add`. 
 
-![](Pasted%20image%2020251117163447.png)
+![](assets/Pasted%20image%2020251117163447.png)
 
 Repeat the above step to until all of the VLANs we created earlier are assigned to their own interface, then click `Save`
 
-![](Pasted%20image%2020251117163645.png)
+![](assets/Pasted%20image%2020251117163645.png)
 
 ## Configure Network Interfaces
 
@@ -62,11 +62,11 @@ Now that the interfaces are assigned, its time to configure them. This involves 
 
 To get started, click on the name of the first interface that we want to modify. In my case, this will be the `OPT1` Interface
 
-![](Pasted%20image%2020251117194752.png)
+![](assets/Pasted%20image%2020251117194752.png)
 
 On the configuration page, you will want to enable the interface, enter an appropriate name for the interface in the `Description` field, select `Static IPv4` under the `IPv4 Configuration Type` dropdown, enter an IPv4 range for the network that will live on this interface, click `Save`, and then click `Apply Changes`.
 
-![](Pasted%20image%2020251117200515.png)
+![](assets/Pasted%20image%2020251117200515.png)
 
 Once those changes are applied, return to the `Interface Assignments` page and repeat the process for the other interfaces we created earlier.
 
