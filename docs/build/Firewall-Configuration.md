@@ -57,3 +57,23 @@ Repeat the above step to until all of the VLANs we created earlier are assigned 
 ![](Pasted%20image%2020251117163645.png)
 
 ## Configure Network Interfaces
+
+Now that the interfaces are assigned, its time to configure them. This involves naming them, assigning IP address ranges, and enabling them.
+
+To get started, click on the name of the first interface that we want to modify. In my case, this will be the `OPT1` Interface
+
+![](Pasted%20image%2020251117194752.png)
+
+On the configuration page, you will want to enable the interface, enter an appropriate name for the interface in the `Description` field, select `Static IPv4` under the `IPv4 Configuration Type` dropdown, enter an IPv4 range for the network that will live on this interface, click `Save`, and then click `Apply Changes`.
+
+![](Pasted%20image%2020251117200515.png)
+
+Once those changes are applied, return to the `Interface Assignments` page and repeat the process for the other interfaces we created earlier.
+
+For quick reference, here are the configurations I am using for each interface:
+
+| VLAN | Description      | IPv4 Address |
+| ---- | ---------------- | ------------ |
+| 810  | Client_Network   | 10.8.10.1/24 |
+| 820  | Security_Gateway | 10.8.20.1/24 |
+| 830  | DMZ              | 10.8.30.1/24 |
