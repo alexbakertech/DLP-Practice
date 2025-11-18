@@ -77,3 +77,10 @@ For quick reference, here are the configurations I am using for each interface:
 | 810  | Client_Network   | 10.8.10.1/24 |
 | 820  | Security_Gateway | 10.8.20.1/24 |
 | 830  | DMZ              | 10.8.30.1/24 |
+
+Once the interfaces are configured, the `Interface Assignments` page should look something like this:
+
+![](assets/Pasted%20image%2020251117202054.png)
+
+## Set Up Initial Firewall Rules
+
