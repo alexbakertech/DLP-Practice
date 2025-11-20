@@ -84,3 +84,36 @@ Once the interfaces are configured, the `Interface Assignments` page should look
 
 ## Set Up Initial Firewall Rules
 
+Now that we have some working interfaces, its time to add some firewall rules to allow traffic on our newly created interfaces.
+
+To get started, navigate to `Firewall > Rules`
+
+![](assets/Pasted%20image%2020251119201734.png)
+
+Next, select `CLIENT_NETWORK` and click `Add`
+
+![](assets/Pasted%20image%2020251119201938.png)
+
+Now, we simply want to allow all traffic of any kind through this interface. If you want to, you can craft more granular firewall rules, but for our use case, allowing all traffic is useful to make sure everything works before tightening down the ruleset.
+
+Set `Action` to Pass, `Protocol` to Any, `Source` to Any, and `Destination` to Any, then click `Save`
+
+![](assets/Pasted%20image%2020251119202358.png)
+
+You'll then be brought back to the rules for the selected interface. From here, we can copy the rule to the other two interfaces we created by clicking the copy button under `Actions`
+
+![](assets/Pasted%20image%2020251119202647.png)
+
+After clicking the copy button, simply change the `Interface` dropdown to the next interface we want to apply the rule to. In my case, this is the `Security_Gateway`. Then click `Save` once more.
+
+![](assets/Pasted%20image%2020251119202940.png)
+
+Repeat this step for the `DMZ` interface, then click apply when you return to the firewall rules page.
+
+![](assets/Pasted%20image%2020251119203102.png)
+
+This will apply all of the firewall rules we added so far. 
+
+And with that, the lab firewall is configured. Please note that the specific rules we will end up with will likely be different from the ones we configured here. These allow all rules are a great jumping off point to make sure everything works, but as we enforce different traffic patterns, we will want to progress to a more locked down state.
+
+The next part of this project is to configure the virtual machines to populate the network and conduct our tests. Return to the [project index](../index.md) page for information on those VMs.
