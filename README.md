@@ -4,7 +4,7 @@ This repository contains all the artifacts for a complete, reproducible Data Los
 
 ## 1. Index
 
-- Visit the project's [Documentation Homepage](docs/INDEX.md)
+- Visit the project's [Documentation Homepage](index.md)
 
 ## 2. Project Objectives
 

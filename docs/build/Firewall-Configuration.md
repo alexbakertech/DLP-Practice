@@ -116,4 +116,4 @@ This will apply all of the firewall rules we added so far.
 
 And with that, the lab firewall is configured. Please note that the specific rules we will end up with will likely be different from the ones we configured here. These allow all rules are a great jumping off point to make sure everything works, but as we enforce different traffic patterns, we will want to progress to a more locked down state.
 
-The next part of this project is to configure the virtual machines to populate the network and conduct our tests. Return to the [project index](../index.md) page for information on those VMs.
+The next part of this project is to configure the virtual machines to populate the network and conduct our tests. Return to the [project index](index.md) page for information on those VMs.
