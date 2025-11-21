@@ -8,8 +8,12 @@ I installed Wazuh on an LXC container within Proxmox. The container has the foll
 | ------ | ----- | ------- |
 | 4 vCPU | 8 GiB | 50 GB   |
 
-Installing Wazuh was straighforward with their [documentation](http://documentation.wazuh.com/current/quickstart.html). It only requires a single command to get it up and running initially:
+Installing Wazuh was straightforward with their [documentation](http://documentation.wazuh.com/current/quickstart.html). It only requires a single command to get it up and running initially:
 
 ```
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
+
+## Deploying Agents
+
+Wazuh uses agents installed on endpoints and devices to monitor for changes and keep track of configurations. 
