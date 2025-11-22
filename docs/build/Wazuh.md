@@ -35,3 +35,4 @@ Then follow the instructions on the new agent page.
 
 ![](assets/Pasted%20image%2020251122143703.png)
 
+## Configuring Alerts
