@@ -31,7 +31,7 @@ To deploy a new agent, sign in to Wazuh and click `Deploy new agent` on the home
 
 ![](assets/Pasted%20image%2020251122135607.png)
 
-Then fill out the fields  form on the new agent page.
+Then follow the instructions on the new agent page.
 
 ![](assets/Pasted%20image%2020251122143703.png)
 
