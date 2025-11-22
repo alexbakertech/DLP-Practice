@@ -5,10 +5,9 @@
 
 I installed Wazuh on an LXC container within Proxmox. The container has the following specs:
 
-| CPU    | RAM   | Storage |
-| ------ | ----- | ------- |
-| 4 vCPU | 8 GiB | 50 GB   |
-- VLAN 810
+| CPU    | RAM   | Storage | VLAN | IPv4      |
+| ------ | ----- | ------- | ---- | --------- |
+| 4 vCPU | 8 GiB | 50 GB   | 810  | 10.8.10.2 |
   
 Installing Wazuh was straightforward with their [documentation](http://documentation.wazuh.com/current/quickstart.html). It only requires a single command to get it up and running initially:
 

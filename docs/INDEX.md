@@ -7,6 +7,7 @@ I'm leaving this for last so I can make sure everything is in place before final
 - [pfSense Setup](build/pfSense.md)
 - [Firewall-Configuration](build/Firewall-Configuration.md)
 - [Wazuh SEIM](build/Wazuh.md)
+- [Windows-Client](build/Windows-Client.md)
 
 ## Network Information
 

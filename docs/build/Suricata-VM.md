@@ -4,7 +4,7 @@ Suricata is an IPS that will serve as a gateway to help identify and block netwo
 
 ## Configurations
 
-- VLAN 20
+- VLAN 820
 - Assign a static IP via pfSense
 - Load DLP/ET rule sets
 - Configure for inline IPS mode.
