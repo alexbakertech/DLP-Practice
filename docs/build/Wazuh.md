@@ -17,6 +17,8 @@ curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-i
 ```
 
 After installation, the web interface is available on port 443 of the container. For my lab, I chose to also forward the port through pfsense so I can access it from outside the lab network.
+
+![](assets/Pasted%20image%2020251122134814.png)
 ## Deploying Agents
 
 Wazuh uses agents installed on endpoints and devices to monitor for changes and keep track of configurations. 
