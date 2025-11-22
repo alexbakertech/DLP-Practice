@@ -82,6 +82,22 @@ Once the interfaces are configured, the `Interface Assignments` page should look
 
 ![](assets/Pasted%20image%2020251117202054.png)
 
+## Enable DHCP
+
+Some of our VMs will be using DHCP for their initial connection to our network. So navigate to `Services > DHCP Server` and configure the following for each of our created interfaces.
+
+Check the box to enable the DHCP server, set the `Address Pool Range` to include a hand full of ip addresses. I like to include the highest 50 or so addresses, then when I assign static addresses, I use the lowest possible IP addresses that are available.
+
+![](assets/Pasted%20image%2020251122184031.png)
+
+Here are the address ranges I used for each interface:
+
+| Interface        | VLAN | Address Pool Start | Address Pool End |
+| ---------------- | ---- | ------------------ | ---------------- |
+| CLIENT_NETWORK   | 810  | 10.8.10.200        | 10.8.10.250      |
+| SECURITY_GATEWAY | 820  | 10.8.20.200        | 10.8.20.250      |
+| DMZ              | 830  | 10.8.30.200        | 10.8.30.250      |
+
 ## Set Up Initial Firewall Rules
 
 Now that we have some working interfaces, its time to add some firewall rules to allow traffic on our newly created interfaces.
