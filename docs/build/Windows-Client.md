@@ -63,16 +63,8 @@ Once the agent is restarted, real time file monitoring will be active and logs w
 
 Now that we are watching for changes in certain file directories, we want to configure alerts for when USB devices are connected to our Windows endpoint.
 
-To do that, we will configure Windows to listen to PNP events and then configure Wazzuh to alert on those events.
-### Enable UPNP Logging In Windows
+To do this, I followed [this guide](https://documentation.wazuh.com/current/user-manual/capabilities/command-monitoring/use-cases/detect-usb-storage.html) on the official Wazuh documentation page.
 
-Open the Administrative Tools application in Windows and select Local Security Policy. From there, navigate to `Security Settings > Advanced Audit Policy Configuration > System Audit Policies - Local Group Policy Object > Detailed Tracking > Audit PNP Activity`
+The end result is that my Wazuh dashboard generates an event every time a USB device is plugged into my Windows endpoint.
 
-![](assets/Pasted%20image%2020251123172022.png)
-
-Be sure to check the `Conffigure the following audit events:` and the `Success` boxes. Then click `Apply` and click `OK`.
-
-This tells Windows to log any successful USB connections.
-
-### Configure UPN Alerting In Wazuh
-
+This is useful in the event that I want to take specific actions when a USB devices is inserted. Or if I want to enforce a `No-USB` policy, I can use this to record policy violations and kick off remedial action.
