@@ -63,4 +63,5 @@ Once the agent is restarted, real time file monitoring will be active and logs w
 
 Now that we are watching for changes in certain file directories, we want to configure alerts for when USB devices are connected to our Windows endpoint.
 
+To do that, we will configure Windows to listen to UPNP events and then configure Wazzuh to alert on those events.
 ### Enable UPNP Logging In Windows
