@@ -56,3 +56,5 @@ Below is the relevant part of the configuration that I added to the `osssec.conf
 To apply the changes to the configuration file, its necessary to restart the Wazuh agent from the Windows Services Manager. 
 
 ![](Pasted%20image%2020251123144026.png)
+
+Once the agent is restarted, real time file monitoring will be active and logs will be viewable via the Wazuh dashboard.
