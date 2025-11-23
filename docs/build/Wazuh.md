@@ -33,5 +33,3 @@ To deploy a new agent, sign in to Wazuh and click `Deploy new agent` on the home
 Then follow the instructions on the new agent page.
 
 ![](assets/Pasted%20image%2020251122143703.png)
-
-## 

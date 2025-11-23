@@ -15,3 +15,19 @@ This VM will run Windows 10 because it is easier to virtualize than Windows 11 i
 I enrolled the Windows 10 machine with my Wazuh server via the command provided by the New Agent workflow.
 
 ![](assets/Pasted%20image%2020251123120403.png)
+
+## Configure File Integrity Monitoring
+
+The Wazuh agent allows for in depth monitoring of events on the target device. In this lab, we want to configure monitoring for user directories that may contain sensitive information as well as directories that may be susceptible to unauthorized access.
+
+### Choose Directories To Monitor
+
+I have chosen to monitor the home directories of the Administrator and the Public users:
+
+- `C:\Users\Admin\`
+- `C:\Users\Public\`
+
+While this does not include every possible directory that is worth monitoring, these directories are sufficient for demonstration purposes.
+
+### Backup Default Agent Configuration
+
