@@ -27,7 +27,7 @@ The lab is deployed as a multi-zone virtual network enforced by pfSense and cons
 - **dlp-gateway** (Ubuntu + Suricata)  
   Inline inspection gateway for DLP in Motion. Handles outbound inspection, pattern matching, and alert generation.
 
-- **win11-client**  
+- **win10-client**  
   Corporate workstation used for endpoint-based DLP scenarios. Contains seeded synthetic PII/PCI content.
 
 - **wazuh-siem**  

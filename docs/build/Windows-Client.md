@@ -6,6 +6,12 @@ The Windows client will simulate a standard client device on our network. It wil
 
 This VM will run Windows 10 because it is easier to virtualize than Windows 11 in its current state. I have assigned the following specifications to this VM:
 
-| CPU    | RAM   | Storage | VLAN | IPv4 |
-| ------ | ----- | ------- | ---- | ---- |
-| 4 vCPU | 8 GiB | 100 GB  | 810  |      |
+| CPU    | RAM   | Storage | VLAN | IPv4      |
+| ------ | ----- | ------- | ---- | --------- |
+| 4 vCPU | 8 GiB | 100 GB  | 810  | 10.8.10.3 |
+
+## Install Wazuh Agent
+
+I enrolled the Windows 10 machine with my Wazuh server via the command provided by the New Agent workflow.
+
+![](assets/Pasted%20image%2020251123120403.png)
