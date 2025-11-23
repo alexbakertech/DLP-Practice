@@ -65,14 +65,14 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
 ## 5. Build Plan
 
 1. **Deploy pfSense**  
-   - Create VLANs (810, 820, 830).  
-   - Configure interfaces, firewall rules, and NAT.  
-   - Ensure client → gateway → DMZ path enforcement.
+   - Create VLANs (810, 820, 830).  - (Done)
+   - Configure interfaces, firewall rules, and NAT.  - (Done)
+   - Ensure client → gateway → DMZ path enforcement. - (In Progress)
 
 2. **Deploy Wazuh SIEM**  
-   - Install Wazuh all-in-one on Ubuntu.  
-   - Register the Windows endpoint.  
-   - Configure FIM, USB monitoring, and optional active-response policies.
+   - Install Wazuh all-in-one on Ubuntu.  - (Done)
+   - Register the Windows endpoint.  - (Done)
+   - Configure FIM, USB monitoring, and optional active-response policies. - (In Progress)
 
 3. **Deploy Suricata Gateway**  
    - Install Suricata in inline IPS mode.  
