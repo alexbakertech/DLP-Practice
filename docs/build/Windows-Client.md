@@ -59,4 +59,8 @@ To apply the changes to the configuration file, its necessary to restart the Waz
 
 Once the agent is restarted, real time file monitoring will be active and logs will be viewable via the Wazuh dashboard.
 
-## Configure USB Monit
+## Configure USB Monitoring
+
+Now that we are watching for changes in certain file directories, we want to configure alerts for when USB devices are connected to our Windows endpoint.
+
+### Enable UPNP Logging In Windows
