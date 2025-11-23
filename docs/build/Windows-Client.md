@@ -22,12 +22,37 @@ The Wazuh agent allows for in depth monitoring of events on the target device. I
 
 ### Choose Directories To Monitor
 
-I have chosen to monitor the home directories of the Administrator and the Public users:
+I have chosen to monitor the home directories of the Administrator and the Public users and the directory that holds the Wazuh agent configuration file:
 
 - `C:\Users\Admin\`
 - `C:\Users\Public\`
+- `C:\Program Files (x86)\ossec-agent\
 
 While this does not include every possible directory that is worth monitoring, these directories are sufficient for demonstration purposes.
 
 ### Backup Default Agent Configuration
 
+The Wazuh agent configuration is located at `C:\Program Files (x86)\ossec-agent\ossec.conf`
+
+Before making any configuration changes, I backed up the configuration file to `ossec.conf.bkp` so I have a known working configuration on standby.
+
+### Enable Whodata FIM In Agent Configuration File
+
+FIM is enabled by default in the Wazuh agent, but we still need to specify our directories of interest and define the type of monitoring we want to occur.
+
+For this lab, I want realtime monitoring of the directories mentioned above. I also want to record additional information about changes that occur. For this we will use Wazuh's whodata module.
+
+Below is the relevant part of the configuration that I added to the `osssec.conf` file:
+
+```
+    <!-- Additional files to be monitored, manually added. -->
+    <directories whodata="yes">C:\Users\Admin</directories>
+    <directories whodata="yes">C:\Users\Public</directories>
+    <directories whodata="yes">C:\Program%20Files%20(x86)\ossec-agent</directories>
+```
+
+### Restart Wazuh Agent
+
+To apply the changes to the configuration file, its necessary to restart the Wazuh agent from the Windows Services Manager. 
+
+![](Pasted%20image%2020251123144026.png)
