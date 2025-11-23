@@ -65,6 +65,19 @@ Now that we are watching for changes in certain file directories, we want to con
 
 To do this, I followed [this guide](https://documentation.wazuh.com/current/user-manual/capabilities/command-monitoring/use-cases/detect-usb-storage.html) on the official Wazuh documentation page.
 
+We modify the following config files to make this work:
+- Windows Endpoint: 
+	- `C:\Program Files (x86)\ossec-agent\local_internal_options.con`
+- Wazuh Host: 
+	- `/var/ossec/etc/shared/default/agent.conf`
+	- `/var/ossec/etc/rules/local_rules.xml`
+
 The end result is that my Wazuh dashboard generates an event every time a USB device is plugged into my Windows endpoint.
 
 This is useful in the event that I want to take specific actions when a USB devices is inserted. Or if I want to enforce a `No-USB` policy, I can use this to record policy violations and kick off remedial action.
+
+To validate that this rule is visible, navigate to the `Threat Hunting` page in Wazuh and filter for `rule.id = 100016`. Then plug and unplug a USB device from the VM a few times.
+
+![](assets/Pasted%20image%2020251123175724.png)
+
+Youll see that the logging is successful and you now have a record of USB events taking place on the Windows endpoint.
