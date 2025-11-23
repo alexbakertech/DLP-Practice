@@ -72,7 +72,8 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
 2. **Deploy Wazuh SIEM**  
    - Install Wazuh all-in-one on Ubuntu.  - (Done)
    - Register the Windows endpoint.  - (Done)
-   - Configure FIM, USB monitoring, and optional active-response policies. - (In Progress)
+   - Configure FIM and USB monitoring. - (Done)
+   - Optionally configure active-response policies. - (Will Revisit)
 
 3. **Deploy Suricata Gateway**  
    - Install Suricata in inline IPS mode.  
