@@ -51,6 +51,7 @@ Below is the relevant part of the configuration that I added to the `osssec.conf
     <directories whodata="yes">C:\Program%20Files%20(x86)\ossec-agent</directories>
 ```
 
+This ensures that my Admin and Public user directories are monitored. I also added the ossec-agent folder to the monitor so I know if someone tries to modify the agent configuration.
 ### Restart Wazuh Agent
 
 To apply the changes to the configuration file, its necessary to restart the Wazuh agent from the Windows Services Manager. 
@@ -80,4 +81,4 @@ To validate that this rule is visible, navigate to the `Threat Hunting` page in 
 
 ![](assets/Pasted%20image%2020251123175724.png)
 
-Youll see that the logging is successful and you now have a record of USB events taking place on the Windows endpoint.
+You'll see that the logging is successful and you now have a record of USB events taking place on the Windows endpoint.
