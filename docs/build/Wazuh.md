@@ -1,7 +1,7 @@
 ## Overview
 [Wazuh](https://wazuh.com/) is an open source security platform that will allow us to collect logs and configure alerts based on client actions.
 
-## Installation
+## Configuration
 
 I installed Wazuh on an LXC container within Proxmox. The container has the following specs:
 
