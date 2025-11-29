@@ -67,7 +67,7 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
 1. **Deploy pfSense**  
    - Create VLANs (810, 820, 830).  - (Done)
    - Configure interfaces, firewall rules, and NAT.  - (Done)
-   - Ensure client → gateway → DMZ path enforcement. - (Done)
+   - Ensure client → gateway → DMZ path enforcement. - (Done - Needs Documentation)
 
 2. **Deploy Wazuh SIEM**  
    - Install Wazuh all-in-one on Ubuntu.  - (Done)
@@ -76,14 +76,14 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
    - Optionally configure active-response policies. - (Will Revisit)
 
 1. **Deploy Suricata Gateway**
-   - Install Suricata in inline IPS mode.  
-   - Load EmergingThreats DLP rule sets.  
-   - Enable EVE JSON logging and forward logs to Wazuh (optional).
+   - Install Suricata in inline IPS mode.  - (Done)
+   - Load EmergingThreats DLP rule sets. -  (Done)
+   - Enable EVE JSON logging and forward logs to Wazuh (optional). - (In Progress)
 
 4. **Configure the Windows Endpoint**  
    - Seed with synthetic PII/PCI test files.  
-   - Install and enroll the Wazuh agent.  
-   - Validate FIM and USB detection.
+   - Install and enroll the Wazuh agent.  - (Done)
+   - Validate FIM and USB detection. - (Done - Needs Documentation)
 
 5. **Deploy External Server**  
    - Install Nginx, FTP, SSH, or similar services.  
