@@ -138,4 +138,3 @@ The next part of this project is to configure the virtual machines to populate t
 
 After configuring the Windows client VM, return here to see how I set up policy based routing to force the client device to route its traffic through Suricata.
 
-First, 

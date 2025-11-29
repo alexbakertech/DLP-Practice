@@ -8,6 +8,7 @@ I'm leaving this for last so I can make sure everything is in place before final
 - [Firewall-Configuration](build/Firewall-Configuration.md)
 - [Wazuh SEIM](build/Wazuh.md)
 - [Windows-Client](build/Windows-Client.md)
+- [Suricata-VM](build/Suricata-VM.md)
 - [Kali-External](build/Kali-External.md)
 
 ## Lab Security Concepts
