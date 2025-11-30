@@ -75,7 +75,7 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
    - Configure FIM and USB monitoring. - (Done)
    - Optionally configure active-response policies. - (Will Revisit)
 
-1. **Deploy Suricata Gateway**
+3. **Deploy Suricata Gateway**
    - Install Suricata in inline IPS mode.  - (Done)
    - Load EmergingThreats DLP rule sets. -  (In Progress)
    - Enable EVE JSON logging and forward logs to Wazuh (optional). - (In Progress)

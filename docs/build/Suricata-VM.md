@@ -129,7 +129,7 @@ Once Suricata is confirmed working, its time to add some rulesets and ingest dat
 
 ## Load EmergingThreats DLP Rule Set
 
-
+WIP
 ## Forward Logs to Wazuh
 
 WIP
