@@ -127,6 +127,9 @@ Now, with all of the configuration out of the way, we can confirm that Suricata 
 
 Once Suricata is confirmed working, its time to add some rulesets and ingest data to Wazuh.
 
+## Load EmergingThreats DLP Rule Set
+
+
 ## Forward Logs to Wazuh
 
 WIP
