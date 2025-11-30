@@ -77,7 +77,7 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
 
 1. **Deploy Suricata Gateway**
    - Install Suricata in inline IPS mode.  - (Done)
-   - Load EmergingThreats DLP rule sets. -  (Done)
+   - Load EmergingThreats DLP rule sets. -  (In Progress)
    - Enable EVE JSON logging and forward logs to Wazuh (optional). - (In Progress)
 
 4. **Configure the Windows Endpoint**  
