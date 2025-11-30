@@ -57,7 +57,7 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
 - **pfSense**: VLAN segmentation, NAT, firewall policy, and traffic control.
 - **Suricata**: Network-level DLP detection using DLP and exfiltration rule sets.
 - **Wazuh**: Endpoint monitoring, File Integrity Monitoring (FIM), USB activity detection, and optional active response.
-- **Windows 11**: Endpoint workstation for testing user-driven exfiltration attempts.
+- **Windows 10**: Endpoint workstation for testing user-driven exfiltration attempts.
 - **Proxmox VE**: Virtualization and distributed networking fabric for the entire project.
 - **Ubuntu Server**: Base OS for Suricata gateway and external server.
 - **(Optional) Microsoft Purview**: Cloud-backed endpoint DLP enforcement and monitoring.
