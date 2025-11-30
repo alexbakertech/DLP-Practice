@@ -138,3 +138,32 @@ The next part of this project is to configure the virtual machines to populate t
 
 After configuring the Windows client VM, return here to see how I set up policy based routing to force the client device to route its traffic through Suricata.
 
+The goal is for the Client's network route to look something like this:
+
+```
+Client -> Suricata -> pfSense -> WAN
+```
+
+Enforcing this path will make sure that Suricata has visibility into the client device's network activity and is in a position to reject or alert on suspicious traffic.
+
+To do this, we want to override the default gateway in pfSense for the client device. Start by navigating to `System/Routing/Gatways` and add a new gateway. I named mine `SuricataGW` and set it to the ip address of my Suricata VM.
+
+![](Assets/Pasted%20image%2020251130183814.png)
+
+Be sure to save and apply changes, then navigate to `Firewall/Rules/CLIENT_NETWORK` and add a new firewall rule to the top of the rule stack. This will ensure traffic has a chance to match against it before it matches the allow all rule we configured earlier.
+
+![](Assets/Pasted%20image%2020251130184043.png)
+
+We want to add a `Pass` rule on the `CLIENT_NETWORK` that applies to `IPv4` addresses with `Any` protocol. The source should be the ip address of the Client VM.
+
+![](Assets/Pasted%20image%2020251130184251.png)
+
+Scroll down to `Extra Options` and click `Show Advanced`, then under `Advanced Options`, select the `SuricataGW` that we added earlier in the `Gateway` option.
+
+![](Assets/Pasted%20image%2020251130184448.png)
+
+Finally, save and apply the firewall rule like we did for the allow all rule above. You should see something like this:
+
+![](Assets/Pasted%20image%2020251130184548.png)
+
+This forces the client device to use Suricata as the next hop in its connection to the internet, effectively forcing Suricata to be a man in the middle and allowing it to see everything that passes from the client device and the internet.
