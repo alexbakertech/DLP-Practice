@@ -2,6 +2,11 @@
 
 This repository contains all the artifacts for a complete, reproducible Data Loss Prevention (DLP) homelab environment deployed inside Proxmox. The lab models a segmented enterprise network using pfSense, VLANs, Suricata, Wazuh, and a Windows client. It demonstrates DLP in Motion, DLP at Rest, and DLP in Use across a fully isolated virtual environment.
 
+## Lab Diagram
+
+[![Architecture](https://mermaid.ink/img/pako:eNqllMtuGjEUhl_FcpRuOhAzw9WqIiFIFJRAUYcEKdCFM3MGrHhs5PGEXKW-Qxd9lO7bN-mT1HPhski6aFiAbfT95_znHPsJByoETPFCs9USTfpziezn8BD55kFAUmwDwZKkDxG6E0zWCIq4EPQAalEjAicxWt0CPfA8r1xX1jw0S-qu7p1ACaXpASHkFSV3oxSRqB6Qdyh5W6UIyI37DqX6TikIw_9VWkUJyARKqRY0WsE_pLyt1HrJDTiRkqayBr5YGnqjRDiX2670QBrNhA3gZwGK8_GpfzLyT2blITrlGtZMiE83-ui4jn7_QKNBL8l3VxfdEZroVN6ij2jaHX2llJbJ7kdRUkJguJIJirSKXw2HKpXj51zPTsSfb9-RXeYxaqTartovcuTWn9F0MKqRN0A7AHkuO8zdYP7ll0GvO-m-QXpFyP7wesd6G_a8ezF4g6sX3LRMtX_WGxcOL1e2JcDi5-y_vVL04Y4HkOSUVGgwLq9Ebms25dl16Alu25ILjrUytnIQohMZrhSXJqtwcW0KcGNs5qeaB8wwdDXM0YEUXIKN4G8Qt0QyP7NzJnjmF_mg70DnyOlkjH79RGeT4tf3zzaoV6LWzGwgDWgJBh0hn8epYFl6Ze-Lkd_zO2WP6RIpicrO7rnNqzhkki0gtn7RB3ShFklWsOvLs004u5wVGl0hKlxWPkvIcy1AbceuMLCrC3bs68NDTCMmEnBwDDpm2R4_ZapzbJY24BxTuwwhYqkwczyXL5ZbMXmtVIyp0akltUoXy61Ougqt1T5n9m2Lt6caZAi6p1JpMK23SS6C6RO-x9Qldopqba_Zargdl9RcBz9g2nSr9VazUasT0iINr9F5cfBjHpVUW16n2ejY806z3XRbHQdDyI3Sw-JVzR_Xl7_I4K4l)]
+
+
 ## 1. Index
 
 - Visit the project's [Documentation Homepage](docs/INDEX.md)
