@@ -1,6 +1,9 @@
+<!--
 [![Lab Complete](https://img.shields.io/badge/Lab-Complete-brightgreen?style=flat-square)](evidence/evidence.md)
 
-[![Summary PDF](https://img.shields.io/badge/Summary-PDF-blue?style=flat-square)](reports/Executive-Summary.md)
+[![Summary PDF](https://img.shields.io/badge/Summary-PDF-blue?style=flat-square)](reports/Executive%20Summary.md)
+-->
+[![Status](https://img.shields.io/badge/Status-In_Progress-orange?style=flat-square)](https://github.com/alexbakertech/DLP-Practice)
 # Proxmox DLP Homelab Project
 
 This repository contains all the artifacts for a complete, reproducible Data Loss Prevention (DLP) homelab environment deployed inside Proxmox. The lab models a segmented enterprise network using pfSense, VLANs, Suricata, Wazuh, and a Windows client. It demonstrates DLP in Motion, DLP at Rest, and DLP in Use across a fully isolated virtual environment.
