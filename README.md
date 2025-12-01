@@ -2,7 +2,7 @@
 [![Lab Complete](https://img.shields.io/badge/Lab-Complete-brightgreen?style=flat-square)](evidence/evidence.md)
 
 [![Summary PDF](https://img.shields.io/badge/Summary-PDF-blue?style=flat-square)](reports/Executive%20Summary.md)
--->
+
 [![Status](https://img.shields.io/badge/Status-In_Progress-orange?style=flat-square)](https://github.com/alexbakertech/DLP-Practice)
 # Proxmox DLP Homelab Project
 
