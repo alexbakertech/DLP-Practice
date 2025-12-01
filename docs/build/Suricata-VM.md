@@ -129,7 +129,11 @@ Once Suricata is confirmed working, its time to add some rulesets and ingest dat
 
 ## Load EmergingThreats DLP Rule Set
 
-WIP
+Since we have not yet loaded any rules into Suricata, it will automatically pull the Emerging Threats ruleset the first time we run `sudo suricata-update`.
+
+![](Assets/Pasted%20image%2020251130230742.png)
+
+Since this update loaded new rules, restart Suricata to apply the new configuration with `sudo systemctl restart suricata`.
+
 ## Forward Logs to Wazuh
 
-WIP

@@ -67,7 +67,7 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
 1. **Deploy pfSense**  
    - Create VLANs (810, 820, 830).  - (Done)
    - Configure interfaces, firewall rules, and NAT.  - (Done)
-   - Ensure client → gateway → DMZ path enforcement. - (Done - Needs Documentation)
+   - Ensure client → gateway → DMZ path enforcement. - (Done)
 
 2. **Deploy Wazuh SIEM**  
    - Install Wazuh all-in-one on Ubuntu.  - (Done)
