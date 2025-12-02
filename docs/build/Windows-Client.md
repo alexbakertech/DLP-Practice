@@ -125,4 +125,4 @@ CardNumber,Expiry,CVV,Name
 6011111111111117,03/25,321,John Doe
 ```
 
-When these files are created, Wazuh will start to track their version history. If they are modified or copied anywhere, we will get an alert.
+When these files are created, Wazuh will start to track their version history. If they are modified or copied anywhere, we will get an alert. Check out my [test cases](evidence/test-cases.md) for examples of the different alerts that will be generated when data exfiltration is attempted.
