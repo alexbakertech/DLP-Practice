@@ -83,4 +83,46 @@ To validate that this rule is visible, navigate to the `Threat Hunting` page in 
 
 You'll see that the logging is successful and you now have a record of USB events taking place on the Windows endpoint.
 
-## Seeding PII In 
+## Seeding PII In `C:\Users\Admin\Documents\`
+
+For realistic testing, it is important to validate using mock data to ensure accurate alerts are being triggered.
+### credit-card.txt
+```credit-card.txt
+American Express: 378282246310005  
+Discover: 6011111111111117  
+MasterCard: 5555555555554444  
+Visa: 4111111111111111  
+Visa (Luhn valid): 4242424242424242  
+MasterCard (Luhn valid): 5105105105105100  
+JCB: 3530111333300000
+```
+### ssn-list.docx
+```ssn-list.docx
+078-05-1120
+096-13-2019
+132-45-6789
+219-09-9999
+312-44-5555
+433-77-8888
+523-33-1234
+612-12-1212
+```
+### hipaa-phi.txt
+```hipaa-phi.txt
+Patient Name: John Doe  
+MRN: 123456789  
+DOB: 01/15/1975  
+SSN: 987-65-4321  
+Diagnosis: Diabetes mellitus  
+Medication: Metformin 500mg
+```
+### pci-batch.csv
+```pci-batch.csv
+CardNumber,Expiry,CVV,Name
+4111111111111111,12/27,123,Allen Jonson
+5555555555554444,09/26,456,Jane Smith
+378282246310005,05/28,7899,Test User
+6011111111111117,03/25,321,John Doe
+```
+
+When these files are created, Wazuh will start to track their version history. If they are modified or copied anywhere, we will get an alert.
