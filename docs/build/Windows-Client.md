@@ -82,3 +82,5 @@ To validate that this rule is visible, navigate to the `Threat Hunting` page in 
 ![](assets/Pasted%20image%2020251123175724.png)
 
 You'll see that the logging is successful and you now have a record of USB events taking place on the Windows endpoint.
+
+## Seeding PII In 
