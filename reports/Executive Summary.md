@@ -21,4 +21,6 @@ To confirm functionality, I performed the following tests to generate artifacts 
 
 ## Lessons Learned
 
-Overall this project was a successful step into the world of DLP and Cybersecurity. 
+- Like many fields of cybersecurity, DLP benefits from a defense in depth plan that layers multiple types of detection and prevention into a single cohesive system built around the data to be protected.
+- A combination of active intrusion prevention and logging is required to build accurate timelines of events in the event of a data leak and can greatly assist in determining the extent of a data breach.
+- Artifacts from DLP and SEIM setups can be used as proof of governance and compliance with data standards.
