@@ -36,17 +36,17 @@ Apache2 webserver is accessible:
 ![](assets/Pasted%20image%2020251210144038.png)
 
 FTP server is accessible:
-![](Pasted%20image%2020251210144111.png)
+![](assets/Pasted%20image%2020251210144111.png)
 
 ### After Suricata
 
 Suricata now blocks access to FTP and HTTP servers, preventing easy exfiltration. Rules can be further tuned to eliminate specific threats.
 
 Apache2 is no longer accessible:
-![](Pasted%20image%2020251210144209.png)
+![](assets/Pasted%20image%2020251210144209.png)
 
 FTP server is no longer accessible:
-![](Pasted%20image%2020251210144152.png)
+![](assets/Pasted%20image%2020251210144152.png)
 
 ### A note about Suricata
 

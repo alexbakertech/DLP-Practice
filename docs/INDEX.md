@@ -1,8 +1,4 @@
-# Project Index
-
-I'm leaving this for last so I can make sure everything is in place before finalizing the README.
-
-## Build Guides
+# Index
 
 - [pfSense Setup](build/pfSense.md)
 - [Firewall-Configuration](build/Firewall-Configuration.md)

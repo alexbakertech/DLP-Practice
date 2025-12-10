@@ -1,7 +1,7 @@
 <!--
 [![Lab Complete](https://img.shields.io/badge/Lab-Complete-brightgreen?style=flat-square)](evidence/evidence.md)
 
-[![Summary PDF](https://img.shields.io/badge/Summary-PDF-blue?style=flat-square)](reports/Executive%20Summary.md)
+[![Executive Summary](https://img.shields.io/badge/Summary-PDF-blue?style=flat-square)](reports/Executive%20Summary.md)
 -->
 [![Status](https://img.shields.io/badge/Status-In_Progress-orange?style=flat-square)](https://github.com/alexbakertech/DLP-Practice)
 # Proxmox DLP Homelab Project
@@ -48,7 +48,7 @@ The lab is deployed as a multi-zone virtual network enforced by pfSense and cons
 
 ### Network Zones (Proxmox VLANs)
 
-- **VLAN 810** – Client Network (`win11-client`, `wazuh-siem`)
+- **VLAN 810** – Client Network (`win10-client`, `wazuh-siem`)
 - **VLAN 820** – Security Gateway (`dlp-gateway`)
 - **VLAN 830** – DMZ (`external-server`)
 - **VLAN 899** – Management (optional / future extension)
@@ -56,7 +56,7 @@ The lab is deployed as a multi-zone virtual network enforced by pfSense and cons
 All traffic from the client network destined for external zones must traverse:
 
 ```
-win11-client → pfSense → dlp-gateway → pfSense → DMZ/external-server
+win10-client → pfSense → dlp-gateway → pfSense → DMZ/external-server
 ```
 
 
@@ -83,43 +83,38 @@ This design mirrors corporate segmentation and supports realistic DLP inspection
    - Install Wazuh all-in-one on Ubuntu.  - (Done)
    - Register the Windows endpoint.  - (Done)
    - Configure FIM and USB monitoring. - (Done)
-   - Optionally configure active-response policies. - (Will Revisit)
+   - Optionally configure active-response policies. - (Disabled to ensure reproducibility)
+	   - Active response can delete/quarantine on USB events but is left off to prevent accidental lockouts during rebuilds.
 
 3. **Deploy Suricata Gateway**
    - Install Suricata in inline IPS mode.  - (Done)
    - Load EmergingThreats DLP rule sets. -  (IDone)
-   - Enable EVE JSON logging and forward logs to Wazuh (optional). - (In Progress)
 
-4. **Configure the Windows Endpoint**  
-   - Seed with synthetic PII/PCI test files.  
+1. **Configure the Windows Endpoint**  
+   - Seed with synthetic PII/PCI test files. - (Done)
    - Install and enroll the Wazuh agent.  - (Done)
-   - Validate FIM and USB detection. - (Done - Needs Documentation)
+   - Validate FIM and USB detection. - (Done)
 
 5. **Deploy External Server**  
-   - Install Nginx, FTP, SSH, or similar services.  
-   - Use as the “public” exfiltration target reachable only through pfSense routing.
+   - Install Nginx, FTP, SSH, or similar services.  (Done)
+   - Use as the “public” exfiltration target reachable only through pfSense routing. (Done)
 
 ## 6. Test Scenarios
 
-- **Network Exfiltration**  
+- **Network Exfiltration** - (Done)
   Attempt HTTP, FTP, SCP, or other file transfers from the Windows host.  
   Suricata inspects flows and issues DLP alerts.
 
-- **File Integrity Violations**  
+- **File Integrity Violations** - (Done)
   Modify, delete, or rename sensitive files.  
   Wazuh FIM generates real-time alerts.
 
-- **USB Exfiltration Attempts**  
+- **USB Exfiltration Attempts** - (Done)
   Copy sensitive data to a virtual USB storage device.  
   Wazuh detects insertion and logs file activity.
 
-- **Optional: Microsoft Purview**  
-  Use Purview DLP policies to block USB writes and cloud uploads.
-
 ## 7. Deliverables
 
-- **Architecture diagram** (PNG/SVG) showing pfSense + VLANs + traffic flow.
-- **Operational runbook** (3–5 pages).
-- **Evidence bundle** containing Suricata, Wazuh, and endpoint logs.
-- **GitHub repository** containing reproducible configs, scripts, and documentation.
-- **Final project report** summarizing design, controls, and findings.
+- **Architecture diagram** (PNG/SVG) showing pfSense + VLANs + traffic flow. (Done)
+- **GitHub repository** containing reproducible configs, scripts, and documentation. (Done)
+- [**Final project report**](reports/Executive%20Summary.md) summarizing design, controls, and findings.

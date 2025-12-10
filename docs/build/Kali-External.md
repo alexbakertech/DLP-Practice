@@ -11,4 +11,9 @@ I have assigned the following specifications to this VM:
 
 I installed Kali to a VM using the [NetInstaller ISO](https://cdimage.kali.org/kali-2025.3/kali-linux-2025.3-installer-netinst-amd64.iso) image, then installed Apache2 and VSFTPD to serve as our exfiltration destinations.
 
+```
+sudo apt update
+sudo apt install apace2 vsftpd
+```
+
 Further configuration was not explored as it was sufficient to simply have these servers available to receive connections. The expectation is that Suricata will terminate any attempts to upload unencrypted files to this VM.

@@ -48,19 +48,9 @@ There are a few modifications that need to be made to the Suricata configuration
 
 First, configure the `HOME_NET` to include the subnet that our client machine is on and the subnet that the suricata vm is on:
 
-```
-
-```
-
 Next is to configure the `nfq` section to set Suricata up in IPS mode instead of its default IDS mode:
 
-```
-
-```
-
 Once those changes are made, we can move on to setting up our NFQUEUE firewall rules in iptables.
-
-You can find the full configuration file here: (To be added)
 
 ### Setup iptables NFQUEUE Rules
 
